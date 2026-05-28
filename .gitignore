@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.log
+
+# Local virtualenvs
+venv/
+.venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Cursor / VSCode
+.vscode/
+
