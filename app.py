@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from flask import Flask, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify, abort
 from datetime import datetime
 
 app = Flask(__name__)
@@ -46,10 +46,7 @@ def validate_priority(p):
 
 @app.route("/")
 def index():
-    return (
-        "TaskFlow API is running. "
-        "Use /api/tasks for CRUD and /api/stats for stats."
-    )
+    return render_template("index.html")
 
 
 @app.route("/api/tasks", methods=["GET"])
