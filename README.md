@@ -26,7 +26,8 @@ cd taskflow
 
 # 2. (Optional) create a virtual environment
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv/bin/activate        # Windows (PowerShell): .\venv\Scripts\Activate.ps1
+                                # Windows (cmd):        venv\Scripts\activate
 
 # 3. Install the single dependency
 pip install -r requirements.txt

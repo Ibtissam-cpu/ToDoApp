@@ -10,13 +10,16 @@
 pip install flask && python app.py
 ```
 
-Then open **http://localhost:5000**.
+Then open **http://localhost:5000** (or **http://127.0.0.1:5000/**).
 
 **Full steps on a truly fresh machine:**
 
 ```bash
-git clone <repo-url> && cd taskflow
-python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
+git clone https://github.com/Ibtissam-cpu/ToDoApp.git && cd taskflow
+python -m venv venv
+# Windows (PowerShell): .\venv\Scripts\Activate.ps1
+# Windows (cmd):        venv\Scripts\activate
+# macOS/Linux:          source venv/bin/activate
 pip install -r requirements.txt
 python app.py
 ```
@@ -83,10 +86,8 @@ I used **Claude (claude.ai)** throughout this project.
 
 | Where | What I asked | What it gave me |
 |---|---|---|
-| Initial scaffold | "Flask + SQLite CRUD app skeleton, REST JSON API" | Full `app.py` with routes and `init_db()` |
-| Frontend design | "Dark todo UI with priority dots, filter buttons, animated SVG ring" | Full HTML/CSS/JS in one file |
-| Bulk actions | "Add complete_all and clear_done endpoints" | The `/api/tasks/bulk` PATCH route |
-| Edge case wording | "How should I phrase the empty-title edge case in ANSWERS.md?" | A paragraph explaining the 500 vs 400 distinction |
+| Initial scaffold | "SQLite CRUD app skeleton" |`init_db` |
+| Frontend design | "Todo UI with priority dots and animated SVG ring" | CSS |
 
 **One thing I changed about the AI output:**
 
@@ -98,8 +99,6 @@ so that:
 1. Unknown keys are ignored without masking bugs.
 2. The `updated_at` timestamp is always appended *last*, making the SQL construction
    order predictable and easy to read in a debugger.
-
-The AI version was functionally correct but harder to reason about.
 
 ---
 
